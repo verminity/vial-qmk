@@ -42,3 +42,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 160
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
+#define RGB_MATRIX_SLEEP
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
+#define RGB_MATRIX_DEFAULT_HUE 120
+#define RGB_MATRIX_DEFAULT_SAT 100
+#define RGB_MATRIX_DEFAULT_VAL 20
