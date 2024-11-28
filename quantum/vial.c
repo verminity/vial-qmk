@@ -488,32 +488,32 @@ static void reload_tap_dance(void) {
 }
 #endif
 
-#ifdef TAPPING_TERM_PER_KEY
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-#ifdef VIAL_TAP_DANCE_ENABLE
-    if (keycode >= QK_TAP_DANCE && keycode <= QK_TAP_DANCE_MAX) {
-        vial_tap_dance_entry_t td;
-        if (dynamic_keymap_get_tap_dance(keycode & 0xFF, &td) == 0)
-            return td.custom_tapping_term;
-    }
-#endif
-#ifdef QMK_SETTINGS
-    return qs_get_tapping_term(keycode, record);
-#else
-    return TAPPING_TERM;
-#endif
-}
+//#ifdef TAPPING_TERM_PER_KEY
+// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+// #ifdef VIAL_TAP_DANCE_ENABLE
+//     if (keycode >= QK_TAP_DANCE && keycode <= QK_TAP_DANCE_MAX) {
+//         vial_tap_dance_entry_t td;
+//         if (dynamic_keymap_get_tap_dance(keycode & 0xFF, &td) == 0)
+//             return td.custom_tapping_term;
+//     }
+// #endif
+// #ifdef QMK_SETTINGS
+//     return qs_get_tapping_term(keycode, record);
+// #else
+//     return TAPPING_TERM;
+// #endif
+// }
 
-uint16_t tap_dance_count(void) {
-    return VIAL_TAP_DANCE_ENTRIES;
-}
+// uint16_t tap_dance_count(void) {
+//     return VIAL_TAP_DANCE_ENTRIES;
+// }
 
-tap_dance_action_t* tap_dance_get(uint16_t tap_dance_idx) {
-    if (tap_dance_idx >= VIAL_TAP_DANCE_ENTRIES)
-        return NULL;
-    return &tap_dance_actions[tap_dance_idx];
-}
-#endif
+// tap_dance_action_t* tap_dance_get(uint16_t tap_dance_idx) {
+//     if (tap_dance_idx >= VIAL_TAP_DANCE_ENTRIES)
+//         return NULL;
+//     return &tap_dance_actions[tap_dance_idx];
+// }
+// #endif
 
 #ifdef VIAL_COMBO_ENABLE
 combo_t key_combos[VIAL_COMBO_ENTRIES] = { };

@@ -55,6 +55,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+        case RGUI_T(KC_SCLN):
+            return TAPPING_TERM + 100;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 #ifdef OLED_ENABLE
 #include <stdio.h>
 
