@@ -39,8 +39,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USE_SERIAL_PD2
 
 #define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 160
+#define TAPPING_TERM 150
 #define TAPPING_TERM_PER_KEY
+// #define IGNORE_MOD_TAP_INTERRUPT // Note that this switch does not work, instead I have hardcoded it in qmk_settings.c
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 

@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
+#include "qmk_settings.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
@@ -59,9 +60,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LGUI_T(KC_A):
         case RGUI_T(KC_SCLN):
-            return TAPPING_TERM + 100;
+            return qs_get_tapping_term(keycode, record) + 200;
         default:
-            return TAPPING_TERM;
+            return qs_get_tapping_term(keycode, record);
     }
 }
 
